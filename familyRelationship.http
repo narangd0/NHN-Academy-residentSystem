@@ -1,0 +1,29 @@
+POST /residents/8/relationship HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Content-Encoding: UTF-8
+
+{
+  "familyResidentId": "7",
+  "relationship": "부"
+}
+
+###
+
+PUT /residents/8/relationship/7
+Host: localhost:8080
+Content-Type: application/json
+Content-Encoding: UTF-8
+
+{
+  "relationship": "모"
+}
+
+###
+
+DELETE /residents/8/relationship/7
+Host: localhost:8080
+Content-Type: application/json
+
+
+

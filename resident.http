@@ -1,0 +1,33 @@
+GET /residents/8
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+PUT /residents/8
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "birthPlace": "병원"
+}
+
+###
+
+POST /residents HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Content-Encoding: UTF-8
+
+{
+  "id": "8",
+  "name": "서민지",
+  "registrationNumber": "123456-1234567",
+  "gender": "여",
+  "birthDate": "2018-12-15T10:00:00",
+  "birthPlace": "자택",
+  "registrationBaseAddress": "경기도 성남시 분당구 대왕판교로645번길"
+}
+
+
+

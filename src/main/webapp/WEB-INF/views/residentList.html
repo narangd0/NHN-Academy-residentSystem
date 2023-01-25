@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주민 목록</title>
+    <style>
+        #table {
+            width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h3>주민 목록</h3>
+
+<table id="table">
+    <thead>
+        <th>No.</th>
+        <th>주민 이름</th>
+        <th>가족관계증명서</th>
+        <th>주민등록등본</th>
+        <th>출생신고서</th>
+        <th>사망신고서</th>
+        <th>증명서 발급 목록</th>
+        <th>삭제</th>
+    </thead>
+    <tbody>
+        <tr th:each="resident : ${residentList}">
+            <td th:text="${resident.id}"></td>
+            <td th:text="${resident.name}"></td>
+            <td><a th:href="@{/certificate/familyRelationshipCertificate/{residentId}(residentId=${resident.id})}">가족관계증명서</a></td>
+            <td>주민등록등본</td>
+            <td>출생신고서</td>
+            <td>사망신고서</td>
+            <td>증명서 발급 목록</td>
+            <td>삭제</td>
+        </tr>
+    </tbody>
+</table>
+<button><a th:href="@{/residents?page={page}&size=3(page=${pageable.pageNumber - 1})}">prev</a></button>
+<button><a th:href="@{/residents?page={page}&size=3(page=${pageable.pageNumber + 1})}">next</a></button>
+</body>
+</html>

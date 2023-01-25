@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>가족관계증명서</title>
+    <style>
+        #table {
+            width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h3>가족관계증명서</h3>
+발급일 : <span th:text="${info.issueDate}"/><br/>
+증명서확인번호 : <span th:text="${info.id}"/><br/>
+등록기준지(본적) : <span th:text="${info.resident.registrationBaseAddress}"/><br/>
+<br/>
+
+<table id="table">
+    <thead>
+        <th>구분</th>
+        <th>성명</th>
+        <th>출생연월일</th>
+        <th>주민등록번호</th>
+        <th>성별</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>본인</td>
+        <td th:text="${info.resident.name}"></td>
+        <td th:text="${info.resident.birthDate}"></td>
+        <td th:text="${info.resident.registrationNumber}"></td>
+        <td th:text="${info.resident.gender}"></td>
+    </tr>
+    <tr th:each="familyInfo : ${familyInfoList}">
+        <td th:text="${familyInfo.familyRelationship}"></td>
+        <td th:text="${familyInfo.name}"></td>
+        <td th:text="${familyInfo.birthDate}"></td>
+        <td th:text="${familyInfo.registrationNumber}"></td>
+        <td th:text="${familyInfo.gender}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

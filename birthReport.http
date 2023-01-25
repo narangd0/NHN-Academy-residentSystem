@@ -1,0 +1,30 @@
+POST /residents/7/birth HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Content-Encoding: UTF-8
+
+{
+  "targetResidentId": "8",
+  "reportDate": "2022-12-04",
+  "birthReportQualifications": "기타",
+  "emailAddress": "asdf@email.com",
+  "phoneNumber": "010-1234-1234"
+}
+
+###
+
+PUT /residents/7/birth/8
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "emailAddress": "asdf@email.com",
+  "phoneNumber": "010-9999-9999"
+}
+
+###
+
+DELETE /residents/7/birth/8
+Host: localhost:8080
+Content-Type: application/json
+
